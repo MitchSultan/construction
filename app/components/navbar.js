@@ -20,6 +20,7 @@ const navItems = [
     title: "About",
     href: "/about",
     dropdownItems: [
+      { title: "Company", href: "/about/company" },
       { title: "History", href: "/about/history" },
       { title: "Leadership", href: "/about/leadership" },
       { title: "Certifications", href: "/about/certifications" },
