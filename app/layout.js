@@ -27,6 +27,9 @@ export default function RootLayout({
     
     <StrictMode>
     <html lang="en">
+      <head>
+      <script type="module"> import mermaid from https://cdn.jsdelivr.net/npm/mermaid@11.4.0/+esm </script>
+      </head>
       <body suppressHydrationWarning={true} className="antialiased">
         {children}
       </body>

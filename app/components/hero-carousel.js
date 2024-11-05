@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/carousel"
 import { Button } from "@/components/ui/button"
 
+import { motion, AnimatePresence } from 'framer-motion'
+
 const carouselData = [
   {
     title: "Expert Construction Consultation",
@@ -87,11 +89,16 @@ export default function HeroCarousel() {
             <Card className="border-none">
               <CardContent className="flex flex-col md:flex-row items-center p-6">
                 <div className="md:w-1/2 md:pr-6 mb-6 md:mb-0">
-                  <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4">{item.title}</h1>
+                  <motion.div><h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4">{item.title}</h1></motion.div>
                   <p className="text-lg mb-6">{item.description}</p>
-                  <Button asChild>
+                  <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}>
+                    <Button asChild>
                     <Link href={item.buttonLink}>{item.buttonText}</Link>
-                  </Button>
+                  </Button></motion.button>
                 </div>
                 <div className= "max-w-full h-auto md:w-1/2">
                   <Image
